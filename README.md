@@ -1,3 +1,5 @@
+![icon](images/icon.jpg)
+
 ##### DEMO (codepen)
 
 http://codepen.io/kevincobain2000/pen/gPgRGZ
