@@ -4,10 +4,10 @@
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
 
-    <title>Ionic Modal</title>
+    <title>Ionic Timeline</title>
 
-    <link href="//code.ionicframework.com/nightly/css/ionic.css" rel="stylesheet">
-    <script src="//code.ionicframework.com/nightly/js/ionic.bundle.js"></script>
+    <link href="http://code.ionicframework.com/1.2.1/css/ionic.min.css" rel="stylesheet">
+    <script src="http://code.ionicframework.com/1.2.1/js/ionic.bundle.js"></script>
 
     <link href="css/style.css" rel="stylesheet">
     <script src="js/app.js"></script>
@@ -16,21 +16,22 @@
   <body ng-controller="AppCtrl">
 
     <ion-header-bar class="bar-stable">
-      <h1 class="title">Timline</h1>
+      <h1 class="title">Timeline</h1>
       <div class="buttons">
         <a href="https://github.com/kevincobain2000/ionic-timeline" class="button button-icon ion-social-github">
         </a>
       </div>
     </ion-header-bar>
   <ion-content>
+      <ion-refresher on-refresh="doRefresh()" pulling-icon="ion-load-d" spinner="ios-small"></ion-refresher>
       <div class="divider-title">Recent</div>
       <ul class="timeline">
         <li>
-          <div class="timeline-thumb timeline-thumb bg-color-blue timeline-icon">
+          <div class="timeline-thumb bg-color-blue timeline-icon">
             <i class="ion-heart"></i>
           </div>
           <div class="timeline-item">
-            <h5>Like Title</h5>
+            <h4>Like Title</h4>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi, error.....</p>
             <div class="timeline-stats">
               <i class="ion-heart"></i> 2,450
@@ -41,7 +42,7 @@
         <li>
           <img src="http://lorempixel.com/people/400/400/" alt="" class="timeline-thumb">
           <div class="timeline-item">
-            <h5>Updated Profile Picture</h5>
+            <h4>Updated Profile Picture</h4>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi, error.....</p>
             <div class="timeline-stats">
               <i class="ion-heart"></i> 2,450
@@ -50,11 +51,11 @@
           </div>
         </li>
         <li>
-          <div class="timeline-thumb timeline-thumb bg-color-green timeline-icon">
+          <div class="timeline-thumb bg-color-lightblue timeline-icon">
             <i class="ion-wineglass"></i>
           </div>
           <div class="timeline-item">
-            <h5>A Wine Glass</h5>
+            <h4>A Wine Glass</h4>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi, error.....</p>
             <div class="timeline-stats">
               <i class="ion-heart"></i> 2,450
@@ -66,12 +67,16 @@
       <div class="divider-title">October 25, 2016</div>
       <ul class="timeline">
         <li>
-          <div class="timeline-thumb timeline-thumb bg-color-red timeline-icon">
+          <div class="timeline-thumb bg-color-red timeline-icon">
             <i class="ion-ios-chatbubble"></i>
           </div>
           <div class="timeline-item">
-            <h5>New Message</h5>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi, error.....</p>
+            <h4>New Message</h4>
+            <p>Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </p>
             <div class="timeline-stats">
               <i class="ion-heart"></i> 2,450
               <span class="pos-absolute-right"><i class="ion-ios-clock"></i> 2 mins ago</span>
@@ -81,8 +86,17 @@
         <li>
           <img src="http://lorempixel.com/people/400/400/" alt="" class="timeline-thumb">
           <div class="timeline-item">
-            <h5>Title</h5>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi, error.....</p>
+            <h4>Colors</h4>
+            <p>
+              <i class="ion-ios-circle-filled icon-size-lg color-red"></i>
+              <i class="ion-ios-circle-filled icon-size-lg color-yellow"></i>
+              <i class="ion-ios-circle-filled icon-size-lg color-orange"></i>
+              <i class="ion-ios-circle-filled icon-size-lg color-blue"></i>
+              <i class="ion-ios-circle-filled icon-size-lg color-lightblue"></i>
+              <i class="ion-ios-circle-filled icon-size-lg color-bluegray"></i>
+              <i class="ion-ios-circle-filled icon-size-lg color-black"></i>
+              <i class="ion-ios-circle-filled icon-size-lg color-green"></i>
+            </p>
             <div class="timeline-stats">
               <i class="ion-heart"></i> 2,450
               <span class="pos-absolute-right"><i class="ion-ios-clock"></i> 2 mins ago</span>
@@ -92,7 +106,7 @@
         <li>
           <img src="http://lorempixel.com/people/400/400/" alt="" class="timeline-thumb">
           <div class="timeline-item">
-            <h5>Title</h5>
+            <h4>Title</h4>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi, error.....</p>
             <div class="timeline-stats">
               <i class="ion-heart"></i> 2,450
@@ -103,6 +117,30 @@
       </ul>
 
   </ion-content>
+  <ion-tabs class="tabs-icon-top tabs-color-active-positive">
+    <ion-tab title="Timeline" icon-off="ion-social-whatsapp-outline" icon-on="ion-social-whatsapp" href="#/tab/users">
+      <ion-nav-view name="tab-users"></ion-nav-view>
+    </ion-tab>
+
+    <ion-tab title="Filters" icon-off="ion-ios-pulse" icon-on="ion-ios-pulse-strong" href="#/tab/filters">
+      <ion-nav-view name="tab-filters"></ion-nav-view>
+    </ion-tab>
+
+    <ion-tab title="Notifications"
+      icon-off="ion-android-notifications-none"
+      icon-on="ion-android-notifications"
+      badge="2"
+      badge-style="badge-positive"
+      href="#/tab/notifications">
+      <ion-nav-view name="tab-notifications"></ion-nav-view>
+    </ion-tab>
+
+    <ion-tab title="Profile" icon-off="ion-ios-person-outline" icon-on="ion-ios-person" href="#/tab/profile">
+      <ion-nav-view name="tab-profile"></ion-nav-view>
+    </ion-tab>
+
+  </ion-tabs>
+
 
   </body>
 </html>
