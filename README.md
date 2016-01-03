@@ -12,4 +12,4 @@ http://codepen.io/kevincobain2000/pen/gPgRGZ
 ##### Files
 
 - [https://github.com/kevincobain2000/ionic-timeline/tree/master/www/css/style.css](https://github.com/kevincobain2000/ionic-timeline/tree/master/www/css/style.css)
-- ![https://github.com/kevincobain2000/ionic-timeline/blob/master/www/index.html](https://github.com/kevincobain2000/ionic-timeline/blob/master/www/index.html)
+- [https://github.com/kevincobain2000/ionic-timeline/blob/master/www/index.html](https://github.com/kevincobain2000/ionic-timeline/blob/master/www/index.html)
