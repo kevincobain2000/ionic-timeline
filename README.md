@@ -1,4 +1,4 @@
-![icon](images/icon.jpg)
+![icon](images/icon.png)
 
 ##### DEMO (codepen)
 
